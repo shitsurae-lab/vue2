@@ -127,6 +127,12 @@ module.exports = {
 
     new CleanWebpackPlugin(),
   ],
+  //マスタッシュを表示させない
+  resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    },
+  },
   //webpack-dev-server ポート番号変更 https://bit.ly/3Caxfbp
   devServer: {
     port: 8100, // ポート番号

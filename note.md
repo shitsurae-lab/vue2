@@ -32,3 +32,79 @@ const app = Vue.createApp({
 - 3.x では、 data オプションは object を返す function 宣言のみ受け入れるよう標準化されました。(オブジェクト宣言はなくなる)
 
 ## [重要: JavaScript-オブジェクトの基本](https://developer.mozilla.org/ja/docs/Learn/JavaScript/Objects/Basics)
+
+# Vue2
+
+## [Webpack5 を使った vue.js の環境構築と SFC の利用方法](https://reffect.co.jp/vue/webpack-vue-single-file-component#vuejs-2)
+
+- {{message}}が表示されないように webpack.config.js に記述
+
+```
+ resolve: {
+    alias: {
+      vue$: 'vue/dist/vue.esm.js',
+    },
+  },
+```
+
+- [Vue.js: マウントのしかた まとめ](https://qiita.com/kazutosato/items/60527d0876ef13ab96cf?utm_source=pocket_mylist)
+
+- [Vue CLI の Hello World って難しくないですか。(Vue.js 初心者)](https://qiita.com/mosamosa/items/e67e9f2f8c2e89c3e27a)
+
+- [Vue.js、テンプレートで書くか？描画関数で書くか？](https://qiita.com/seya/items/d2898b551342a53c4fbd)
+
+## 書籍: Vue インスタンスを作る
+
+- el: どの HTML 要素とつながるのか
+- data: どんなデータがあるのか
+- method: どんな処理を行うのか
+- computed: どのデータを使って別の計算をするのか
+- watch: どのデータを監視するのか
+
+## (閑話休題)[Vue.js「コンポーネント」入門](https://qiita.com/kiyokiyo_kzsby/items/980c1dc45e00d2d3cbb4)
+
+- コンポーネント間のデータ受け渡しからスタート ※その前に書籍 vue と CSS の実践をすること
+
+## 書籍: 要素の属性をデータで指定する
+
+- 【重要】ファイルネームのパスは絶対パスらしい
+
+```
+<template>
+<img v-bind:src="fileName" alt="" />
+</template>
+<script>
+data(){
+  return{
+    fileName: './src/images/horse640.jpg',
+  }
+}
+</script>
+```
+
+- vue と pug について
+  https://kic-yuuki.hatenablog.com/entry/2019/01/27/155050
+  ~~軽く確認(深みに入らないようにする!!!)~~ =>軽く深みに入りそうだったのでやめておく
+
+## Qiita [Vue.js: 複数のクラスをバインディングする場合どのような書き方があるか](https://qiita.com/FumioNonaka/items/08ab308cf1e931d4b2eb)
+
+- 配列構文
+
+```
+<button type="button"
+    :class="['btn', 'btn-outline-info', 'btn-sm', isActive ? 'active' : '']">
+    button
+</button>
+```
+
+?? isActive がよくわかっていないかも…
+=> isActive 指定したアイテムがアクティブかどうか確認すること
+
+?? [active とは](https://developer.mozilla.org/ja/docs/Web/CSS/:active)
+
+◎◎ [フロントエンドエンジニア必読 vue.js の基礎](https://reffect.co.jp/vue/vue-js-basic)
+
+◎◎ [Vue.js: 複数のクラスをバインディングする場合どのような書き方があるか](https://qiita.com/FumioNonaka/items/08ab308cf1e931d4b2eb)
+
+- 2/4 について
+  書籍では P.64 の FORM をデータとしてつなぐからスタートかも
